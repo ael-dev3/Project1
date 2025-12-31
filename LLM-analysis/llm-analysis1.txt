@@ -1,0 +1,85 @@
+Project1 LLM analysis
+======================
+
+Purpose
+- README.md: project is to build a prototype for SpacetimeDB as a study/practice exercise.
+- Repo currently holds study material copied from clockworklabs/spacetime-docs in study/.
+
+High-level structure
+- README.md: project purpose.
+- study/: full SpacetimeDB documentation tree (markdown, nav, scripts, configs, assets).
+- LLM-analysis/: analysis outputs (this file).
+
+Key documentation coverage (study/docs)
+- index.md: SpacetimeDB overview, state mirroring, tables, reducers, identities, FAQ.
+- getting-started.md: install CLI, run spacetime start, login flow, quickstart links.
+- deploying/maincloud.md: publish to Maincloud and connect via maincloud URL.
+- deploying/spacetimedb-standalone.md: self-hosting guide with systemd, nginx, TLS, firewall, updates, troubleshooting.
+- cli-reference.md: generated spacetime CLI reference (publish, delete, logs, call, describe, sql, server subcommands, etc).
+- cli-reference/standalone-config.md: config.toml options (certificate-authority, logs, websocket).
+- modules/index.md: server module overview and language links.
+- modules/rust/quickstart.md: Rust chat module walkthrough (tables, reducers, lifecycle reducers).
+- modules/rust/index.md: link to docs.rs SDK reference.
+- modules/c-sharp/quickstart.md: C# chat module walkthrough.
+- modules/c-sharp/index.md: C# module library reference (tables, reducers, types, scheduling, logging, identities, timestamps).
+- sdks/index.md: client SDK overview and features.
+- sdks/rust/quickstart.md: Rust CLI chat client tutorial.
+- sdks/rust/index.md: Rust client SDK reference (DbConnection, callbacks, cache, reducers).
+- sdks/c-sharp/quickstart.md: C# client chat tutorial with processing thread and input loop.
+- sdks/c-sharp/index.md: C# client SDK reference (connection, subscriptions, events, cache).
+- sdks/typescript/quickstart.md: React/Vite chat client tutorial with hooks and reducers.
+- sdks/typescript/index.md: TypeScript client SDK reference.
+- sql/index.md: SQL subsets for subscriptions and ad hoc queries, grammar, best practices.
+- subscriptions/index.md: SubscriptionBuilder/SubscriptionHandle and best practices.
+- subscriptions/semantics.md: subscription ordering and cache guarantees (note: file states it was generated from a Discord discussion and edited).
+- rls/index.md: row level security filters with :sender, limitations, recursion rules.
+- http/authorization.md: OIDC token usage and Authorization header, GET /v1/ping.
+- http/identity.md: identity and token endpoints, verification, and public key.
+- http/database.md: database publish/update/delete, schema, logs, sql, and subscribe endpoints.
+- webassembly-abi/index.md: low-level module ABI (logging, buffers, scheduling, table ops).
+- bsatn.md: BSATN binary encoding reference for algebraic values.
+- sats-json.md: SATS JSON format for algebraic types and values.
+- appendix.md: auto_inc sequence behavior and caveats.
+- unity/index.md + part-1..part-4.md: Unity tutorial for Blackholio (server module, bindings, client, gameplay, movement/collision).
+
+Study material meta
+- study/README.md: migration notice, editing workflow, nav.js generation, CLI reference generation, link check, license.
+- study/STYLE.md: documentation style guide (audience, code formatting, limitations, tutorial style).
+- study/llms.md: large consolidated overview and quickstart-style guidance, includes identity derivation and subscription semantics.
+- study/LICENSE.txt: Apache 2.0 license for docs.
+
+BSATN spec files (study/bsatn)
+- spec.tex: LaTeX spec for BSATN encoding definitions.
+- readme.md: spec notes and build instructions (katex, wkhtmltopdf).
+- Makefile: build spec.html/spec.pdf using katex and wkhtmltopdf.
+- katex-header.html: KaTeX CSS header snippet.
+- .gitignore: ignores spec.html/spec.pdf.
+- LICENSE: empty file.
+
+Build and tooling
+- study/package.json: docs tooling deps (github-slugger, unified, remark-parse, tsx, typescript).
+- study/tsconfig.json: compiles nav.ts to docs/nav.js.
+- study/scripts/checkLinks.ts: validates internal links and images against nav and headings.
+- study/scripts/checkNav.mjs: compares nav listing to docs files (expects docs/nav.mjs).
+- study/nav.ts: nav definition for docs.
+- study/docs/nav.js: compiled nav output.
+- study/.prettierrc: formatting rules.
+- study/.gitignore: editor and node artifacts.
+- study/yarn.lock: Yarn v1 lockfile with Node dependencies (esbuild and others).
+- study/.github/workflows/repo-migration-notice.yml: auto-comment and close issues/PRs to redirect to SpacetimeDB repo.
+
+Assets (study/docs/unity)
+- part-1-hero-image.png
+- part-1-unity-hub-new-project.jpg
+- part-1-universal-2d-template.png
+- part-3-player-on-screen.png
+Note: binary assets not inspected beyond filenames.
+
+Notable quirks
+- checkNav.mjs expects docs/nav.mjs but the repo has docs/nav.js (may need rename or script update).
+- bsatn/LICENSE is empty.
+
+Summary
+- This repository is a learning workspace for SpacetimeDB.
+- Current contents are almost entirely documentation and study material from the official docs repo.
+- No prototype module or client code exists yet; the next step is to add actual project code as needed.
