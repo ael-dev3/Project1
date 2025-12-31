@@ -1,0 +1,46 @@
+SpacetimeDB project ideas
+=========================
+
+1) Real-time multiplayer game backends
+- Top-down arena (agar.io style), co-op dungeon, or battle arena.
+- Emphasis: entity state in tables, reducers for actions, subscriptions for client state.
+
+2) Collaborative apps
+- Shared whiteboard, kanban board, or live document comments.
+- Emphasis: subscriptions for live UI updates and audit history.
+
+3) Live ops dashboards
+- Real-time admin/ops UI for game state, server metrics, or moderation tools.
+- Emphasis: read-only subscriptions + reducer-based admin actions.
+
+4) Chat and presence systems
+- Global chat, guild chat, direct messages, online presence.
+- Emphasis: reducers for send/rename, subscriptions for message streams.
+
+5) Turn-based strategy
+- Synchronized turns with reducers enforcing rules and transactions.
+- Emphasis: deterministic game logic in reducers.
+
+6) Real-time marketplace
+- Player-to-player trading, live auctions, or inventory exchanges.
+- Emphasis: constraints, indexes, and reducer validation.
+
+7) Social simulation / MMO-lite
+- Persistent world state, user-owned assets, crafting, and progression.
+- Emphasis: in-memory speed + WAL persistence.
+
+8) IoT or telemetry dashboards
+- Stream sensor updates, alerting, and live charts.
+- Emphasis: subscriptions for deltas, SQL for filtering.
+
+9) Learning/prototyping tools
+- Schema playground, reducer sandbox, or client SDK comparison demo.
+- Emphasis: show Rust/C#/TypeScript parity with the same module.
+
+10) Event-driven workflows
+- Task queues, automated triggers, and scheduled reducers.
+- Emphasis: scheduled tables + reducers for periodic jobs.
+
+Notes
+- Prefer a small prototype first: 1 table, 1 reducer, 1 subscription.
+- Add auth with Identity/Token when moving beyond local testing.
