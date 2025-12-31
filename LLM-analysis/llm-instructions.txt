@@ -1,0 +1,5 @@
+LLM instructions
+=================
+
+- After each change, create a separate commit and push immediately.
+- Keep commits scoped to a single change/file when possible.
